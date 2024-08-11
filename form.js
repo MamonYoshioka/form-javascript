@@ -1,9 +1,10 @@
+// 即時関数宣言
 (() => {
     const $doc = document;
     const button = $doc.querySelectorAll('[data-button= "js-btn"]');
-    // console.log('button', button);
-
-    const selectBox = $doc.getElementById('fruits');
+    const selectBox = $doc.querySelector('[data-fruit="fruits"]');
+    const secondForm = $doc.querySelector('[data-userForm2="userForm2"]');
+    // console.log('secondForm', secondForm);
 
     // ボタンを押した時にイベントを発火させる
     const clickHandler = (e) => {
@@ -27,7 +28,25 @@
             default:
                 break;
         }
+
+        // セレクトボックスの選択がバナナの場合に2人目のフォームを表示
+        toggleSecondForm(selectBox.value);
     }
+
+    // セレクトボックスの変更イベントを監視
+    selectBox.addEventListener('change', () => {
+        toggleSecondForm(selectBox.value);
+    });
+
+    // 2人目のフォームの表示/非表示を切り替える関数
+    const toggleSecondForm = (selectedValue) => {
+        if (selectedValue === 'banana') {
+            secondForm.classList.remove('hidden');
+        } else {
+            secondForm.classList.add('hidden');
+        }
+    };
+
     // aタグを押したら、clickHandlerが発火する処理
     button.forEach(button => {
         button.addEventListener('click', (e) => clickHandler(e));

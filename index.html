@@ -8,27 +8,75 @@
     <title>form</title>
 </head>
 <body>
-    <p>
-        Hello Form!!
-    </p>
     <div class="buttons">
         <button type="button" class="btn btn-secondary" data-button="js-btn">りんご</button>
         <button type="button" class="btn btn-secondary" data-button="js-btn">バナナ</button>
         <button type="button" class="btn btn-secondary" data-button="js-btn">オレンジ</button>
         <button type="button" class="btn btn-secondary" data-button="js-btn">ブドウ</button>
     </div>
-    <form class="center">
-        <label for="fruits" class="font">好きな果物を選んでください</label>
+    <div>
+        <label for="fruits" class="label-font">好きな果物を選んでください</label>
         <div class="space"></div>
         <label class="selectBox">
-            <select id="fruits" name="fruits">
+            <select data-fruit="fruits" name="fruits">
                 <option value="apple">りんご</option>
                 <option value="banana">バナナ</option>
                 <option value="orange">オレンジ</option>
                 <option value="grape">ぶどう</option>
             </select>
         </label>
+    </div>
+
+    <div class="space"></div>
+
+    <h3>ユーザー情報フォーム</h3>
+    <h4>ユーザー情報</h4>
+    <form id="userForm">
+        <div class="form-group">
+            <label for="name">名前:</label>
+            <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+            <label for="dob" class="birthday">生年月日:</label>
+            <input type="date" id="dob" name="dob" required class="name">
+        </div>
+        <div class="form-group">
+            <label for="gender">性別:</label>
+            <select data-gender="gender" name="gender" required class="selects">
+                <option value="">選択してください</option>
+                <option value="male">男性</option>
+                <option value="female">女性</option>
+                <option value="other">その他</option>
+            </select>
+        </div>
+        <!-- <button type="submit">送信</button> -->
     </form>
+
+    <div class="space"></div>
+
+    <!-- 2人目のフォーム -->
+    <form data-userForm2="userForm2" class="hidden">
+        <h4>2人目のユーザー情報</h4>
+        <div class="form-group">
+            <label for="name2">名前:</label>
+            <input type="text" id="name2" name="name2" required >
+        </div>
+        <div class="form-group">
+            <label for="dob2" class="birthday">生年月日:</label>
+            <input type="date" id="dob2" name="dob2" required class="name">
+        </div>
+        <div class="form-group">
+            <label for="gender2">性別:</label>
+            <select data-gender2="gender2" name="gender2" required class="selects">
+                <option value="">選択してください</option>
+                <option value="male">男性</option>
+                <option value="female">女性</option>
+                <option value="other">その他</option>
+            </select>
+        </div>
+        <!-- <button type="submit">送信</button> -->
+    </form>
+
     <script src="form.js"></script>
 </body>
 
