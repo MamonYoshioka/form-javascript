@@ -15,8 +15,9 @@
         <button type="button" class="btn btn-secondary" data-button="js-btn">ブドウ</button>
     </div>
     <div>
-        <label for="fruits" class="label-font">好きな果物を選んでください</label>
-        <div class="space"></div>
+        <div style="margin-bottom: 2%;">
+            <label for="fruits" class="label-font">好きな果物を選んでください</label>
+        </div>
         <label class="selectBox">
             <select data-fruit="fruits" name="fruits">
                 <option value="apple">りんご</option>
@@ -31,7 +32,7 @@
 
     <h3>ユーザー情報フォーム</h3>
     <h4>ユーザー情報</h4>
-    <form id="userForm">
+    <form id="userForm" class="form1">
         <div class="form-group">
             <label for="name">名前:</label>
             <input type="text" data-name="name" name="name" required>
@@ -51,11 +52,8 @@
         </div>
         <!-- <button type="submit">送信</button> -->
     </form>
-
-    <div class="space"></div>
-
     <!-- 2人目のフォーム -->
-    <form data-userForm2="userForm2" class="hidden">
+    <form data-userForm2="userForm2" class="hidden form2">
         <h4>2人目のユーザー情報</h4>
         <div class="form-group">
             <label for="name2">名前:</label>
